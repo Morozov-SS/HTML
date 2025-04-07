@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <title>Персонажі | Атлант розправив плечі</title>
+</head>
+<body>
+  <!-- Навігація -->
+  <nav>
+    <ul>
+      <li><a href="../index.html">Головна</a></li>
+      <li><a href="pages/author.html">Авторка</a></li>
+      <li><a href="characters.html" style="font-weight: bold;">Персонажі</a></li>
+      <li><a href="quotes.html">Цитати</a></li>
+      <li><a href="philosophy.html">Філософія</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <header>
+      <h1>Персонажі "Атлант розправив плечі"</h1>
+      <p>Герої як утілення філософських ідей Айн Ренд</p>
+    </header>
+
+
+    <!-- Основні персонажі -->
+    <section id="main-characters">
+      <h2>Головні герої</h2>
+
+        <h3>Джон Голт</h3>
+        <p><strong>Роль:</strong> Інженер-винахідник, лідер страйку творців</p>
+        <p><strong>Філософія:</strong> Втілення раціонального егоїзму. Відмовився від світу, що живе за принципами альтруїзму.</p>
+        <details>
+          <summary>Детальніше</summary>
+          <ul>
+            <li>Створив двигун, що перетворює атмосферну енергію в електрику</li>
+            <li>Організував "Голтівський рух" — страйк геніїв</li>
+            <li>Прототип — комбінація ідей Нікола Тесли та бізнесменів-інноваторів</li>
+          </ul>
+        </details>
+      </article>
+
+        <h3>Дагні Таггерт</h3>
+        <p><strong>Роль:</strong> Віце-президент Taggart Transcontinental</p>
+        <p><strong>Філософія:</strong> Практичний об'єктивіст. Вірить у продуктивність і справедливість обміну.</p>
+        <details>
+          <summary>Детальніше</summary>
+          <ul>
+            <li>Єдина жінка-керівник у залізничній індустрії</li>
+            <li>Побудувала "Лінію Джона Голта" — найсучаснішу залізницю</li>
+            <li>Символ жіночої сили в бізнесі</li>
+          </ul>
+        </details>
+      </article>
+    </section>
+
+    <!-- Другорядні персонажі -->
+    <section id="secondary-characters">
+      <h2>Другорядні персонажі</h2>
+
+      <!-- Франциско д'Анконія -->
+      <article class="character" data-name="Франциско д'Анконія">
+        <h3>Франциско д'Анконія</h3>
+        <p><strong>Роль:</strong> Мідний магнат, союзник Голта</p>
+        <p><strong>Філософія:</strong> Демонструє руйнівну силу "грошей без золота".</p>
+        <blockquote>"Я зупинив мотор світу"</blockquote>
+      </article>
+
+      <!-- Джеймс Таггерт -->
+      <article class="character" data-name="Джеймс Таггерт">
+        <h3>Джеймс Таггерт</h3>
+        <p><strong>Роль:</strong> Президент Taggart Transcontinental, брат Дагні</p>
+        <p><strong>Філософія:</strong> Антигерой, що покладається на держпідтримку.</p>
+      </article>
+    </section>
+
+    <!-- Персонажі-антагоністи -->
+    <section id="antagonists">
+      <h2>Антагоністи</h2>
+      <table border="1">
+        <tr>
+          <th>Ім'я</th>
+          <th>Посада</th>
+          <th>Символізує</th>
+        </tr>
+        <tr>
+          <td>Веслі Моуч</td>
+          <td>Голова Національної Ради</td>
+          <td>Корупційну бюрократію</td>
+        </tr>
+        <tr>
+          <td>Ліліан Реардон</td>
+          <td>Дружина Генка Реардона</td>
+          <td>Соціальні умовності</td>
+        </tr>
+      </table>
+    </section>
+  </main>
+
+
+  <!-- Простий пошук -->
+  <script>
+    document.getElementById('characterSearch').addEventListener('input', function() {
+      const searchTerm = this.value.toLowerCase();
+      const characters = document.querySelectorAll('.character');
+      
+      characters.forEach(char => {
+        const name = char.getAttribute('data-name').toLowerCase();
+        char.style.display = name.includes(searchTerm) ? 'block' : 'none';
+      });
+    });
+  </script>
+</body>
+</html>
