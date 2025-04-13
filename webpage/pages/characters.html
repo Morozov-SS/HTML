@@ -3,30 +3,31 @@
 <head>
   <meta charset="UTF-8">
   <title>Персонажі | Атлант розправив плечі</title>
+  <link rel="stylesheet" href="../style.css">
 </head>
 <body>
   <!-- Навігація -->
-  <nav>
+  <nav class="nav-menu">
     <ul>
       <li><a href="../index.html">Головна</a></li>
-      <li><a href="pages/author.html">Авторка</a></li>
-      <li><a href="characters.html" style="font-weight: bold;">Персонажі</a></li>
+      <li><a href="author.html">Авторка</a></li>
+      <li><a href="characters.html" class="active-link">Персонажі</a></li>
       <li><a href="quotes.html">Цитати</a></li>
       <li><a href="philosophy.html">Філософія</a></li>
     </ul>
   </nav>
 
-  <main>
+  <main class="main-content">
     <header>
-      <h1>Персонажі "Атлант розправив плечі"</h1>
+      <h1 class="section-title">Персонажі "Атлант розправив плечі"</h1>
       <p>Герої як утілення філософських ідей Айн Ренд</p>
     </header>
 
-
     <!-- Основні персонажі -->
-    <section id="main-characters">
-      <h2>Головні герої</h2>
+    <section id="main-characters" class="character-section">
+      <h2 class="section-subtitle">Головні герої</h2>
 
+      <article class="character-card main-character">
         <h3>Джон Голт</h3>
         <p><strong>Роль:</strong> Інженер-винахідник, лідер страйку творців</p>
         <p><strong>Філософія:</strong> Втілення раціонального егоїзму. Відмовився від світу, що живе за принципами альтруїзму.</p>
@@ -40,6 +41,7 @@
         </details>
       </article>
 
+      <article class="character-card main-character">
         <h3>Дагні Таггерт</h3>
         <p><strong>Роль:</strong> Віце-президент Taggart Transcontinental</p>
         <p><strong>Філософія:</strong> Практичний об'єктивіст. Вірить у продуктивність і справедливість обміну.</p>
@@ -55,19 +57,19 @@
     </section>
 
     <!-- Другорядні персонажі -->
-    <section id="secondary-characters">
-      <h2>Другорядні персонажі</h2>
+    <section id="secondary-characters" class="character-section">
+      <h2 class="section-subtitle">Другорядні персонажі</h2>
 
       <!-- Франциско д'Анконія -->
-      <article class="character" data-name="Франциско д'Анконія">
+      <article class="character-card secondary-character" data-name="Франциско д'Анконія">
         <h3>Франциско д'Анконія</h3>
         <p><strong>Роль:</strong> Мідний магнат, союзник Голта</p>
         <p><strong>Філософія:</strong> Демонструє руйнівну силу "грошей без золота".</p>
-        <blockquote>"Я зупинив мотор світу"</blockquote>
+        <blockquote class="quote-block">"Я зупинив мотор світу"</blockquote>
       </article>
 
       <!-- Джеймс Таггерт -->
-      <article class="character" data-name="Джеймс Таггерт">
+      <article class="character-card secondary-character" data-name="Джеймс Таггерт">
         <h3>Джеймс Таггерт</h3>
         <p><strong>Роль:</strong> Президент Taggart Transcontinental, брат Дагні</p>
         <p><strong>Філософія:</strong> Антигерой, що покладається на держпідтримку.</p>
@@ -75,9 +77,9 @@
     </section>
 
     <!-- Персонажі-антагоністи -->
-    <section id="antagonists">
-      <h2>Антагоністи</h2>
-      <table border="1">
+    <section id="antagonists" class="character-section">
+      <h2 class="section-subtitle">Антагоністи</h2>
+      <table class="philosophy-table">
         <tr>
           <th>Ім'я</th>
           <th>Посада</th>
@@ -97,16 +99,31 @@
     </section>
   </main>
 
+  <footer id="page-footer">
+    <p>© 2023 Фан-сайт "Атлант розправив плечі". Усі цитати належать Айн Ренд.</p>
+  </footer>
 
   <!-- Простий пошук -->
   <script>
-    document.getElementById('characterSearch').addEventListener('input', function() {
-      const searchTerm = this.value.toLowerCase();
-      const characters = document.querySelectorAll('.character');
-      
-      characters.forEach(char => {
-        const name = char.getAttribute('data-name').toLowerCase();
-        char.style.display = name.includes(searchTerm) ? 'block' : 'none';
+    document.addEventListener('DOMContentLoaded', function() {
+      // Додамо поле пошуку, якщо його немає в HTML
+      const searchHtml = `
+        <div class="character-search">
+          <input type="text" id="characterSearch" placeholder="Пошук персонажів...">
+        </div>
+      `;
+      document.querySelector('main').insertAdjacentHTML('afterbegin', searchHtml);
+
+      // Обробник пошуку
+      document.getElementById('characterSearch').addEventListener('input', function() {
+        const searchTerm = this.value.toLowerCase();
+        const characters = document.querySelectorAll('.character-card');
+        
+        characters.forEach(char => {
+          const name = char.getAttribute('data-name')?.toLowerCase() || 
+                      char.querySelector('h3')?.textContent.toLowerCase() || '';
+          char.style.display = name.includes(searchTerm) ? 'block' : 'none';
+        });
       });
     });
   </script>

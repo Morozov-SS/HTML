@@ -3,36 +3,43 @@
 <head>
   <meta charset="UTF-8">
   <title>Айн Ренд | Фан-сайт "Атлант розправив плечі"</title>
+  <link rel="stylesheet" href="../style.css">
 </head>
 <body>
+  <!-- Header -->
+  <header id="main-header">
+    <h1>Аліса Зінов'євна Розенбаум (Айн Ренд)</h1>
+    <p><em>1905–1982 | Філософ, письменниця, драматург</em></p>
+  </header>
+
   <!-- Навігація -->
-  <nav>
+  <nav class="nav-menu">
     <ul>
       <li><a href="../index.html">Головна</a></li>
-      <li><a href="author.html" style="font-weight: bold;">Авторка</a></li>
+      <li><a href="author.html" class="active-link">Авторка</a></li>
       <li><a href="characters.html">Персонажі</a></li>
       <li><a href="quotes.html">Цитати</a></li>
-      <li><a href="pages/philosophy.html">Філософія</a></li>
+      <li><a href="philosophy.html">Філософія</a></li>
     </ul>
   </nav>
 
-  <main>
+  <!-- Основний контент -->
+  <main class="main-content">
     <!-- Заголовок з портретом -->
-    <header>
-      <h1>Аліса Зінов'євна Розенбаум <br>(Айн Ренд)</h1>
-      <img src="../images/111.jpg" alt="Портрет Айн Ренд" width="300">
-      <p><em>1905–1982 | Філософ, письменниця, драматург</em></p>
-    </header>
-
-    <!-- Основний контент -->
     <section>
-      <h2>Життєвий шлях</h2>
-      <article>
+      <img src="../images/111.jpg" alt="Портрет Айн Ренд" class="book-cover" width="300">
+    </section>
+
+    <!-- Життєвий шлях -->
+    <section>
+      <h2 class="section-title">Життєвий шлях</h2>
+      
+      <article class="character-card">
         <h3>Ранні роки</h3>
         <p>Народилася 2 лютого 1905 року в Санкт-Петербурзі (Російська імперія) у єврейській родині фармацевта. У 9 років почала писати сценарії для кіно.</p>
       </article>
 
-      <article>
+      <article class="character-card">
         <h3>Еміграція до США</h3>
         <p>1926 року, після навчання у Ленінграді, отримала дозвіл на відвідування родичів у Чикаго. В Америці змінила ім'я на <strong>Айн Ренд</strong>.</p>
       </article>
@@ -40,8 +47,8 @@
 
     <!-- Творчість -->
     <section>
-      <h2>Ключові твори</h2>
-      <table border="1">
+      <h2 class="section-title">Ключові твори</h2>
+      <table class="philosophy-table">
         <tr>
           <th>Рік</th>
           <th>Назва</th>
@@ -67,7 +74,7 @@
 
     <!-- Цитата -->
     <aside>
-      <blockquote>
+      <blockquote class="quote-block">
         "Питання не в тому, хто мені дозволить, а в тому, хто мене зупинить."
         <footer>— Айн Ренд, "Атлант розправив плечі"</footer>
       </blockquote>
@@ -75,7 +82,7 @@
   </main>
 
   <!-- Підвал -->
-  <footer>
+  <footer id="page-footer">
     <p>© 2023 Фан-сайт. Джерела: 
       <a href="https://aynrand.org" target="_blank">Ayn Rand Institute</a>
     </p>
